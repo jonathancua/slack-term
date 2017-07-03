@@ -34,9 +34,11 @@ test:
 #
 # `.`
 # Location of the source files
+# Because I am building inside docker
 build:
 	@ echo "+ $@"
-	@ CGO_ENABLED=0 go build -a -installsuffix cgo -o ./bin/slack-term .
+	# @ CGO_ENABLED=0 go build -a -installsuffix cgo -o ./bin/slack-term .
+	@ go build -a -o ./bin/slack-term .
 
 # Cross-compile
 # http://dave.cheney.net/2015/08/22/cross-compilation-with-go-1-5

@@ -8,14 +8,14 @@ A [Slack](https://slack.com) client for your terminal.
 Getting started
 ---------------
 
-1. [Download](https://github.com/erroneousboat/slack-term/releases) a
+1. [Download](https://github.com/jonathancua/slack-term/releases) a
    compatible version for your system, and place where you can access it from
    the command line like, `~/bin`, `/usr/local/bin`, or `/usr/local/sbin`. Or
    get it via Go:
 
 
     ```bash
-    $ go get -u github.com/erroneousboat/slack-term
+    $ go get -u github.com/jonathancua/slack-term
     ```
 
 2. Get a slack token, click [here](https://api.slack.com/docs/oauth-test-tokens) 

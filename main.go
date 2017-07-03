@@ -7,8 +7,8 @@ import (
 	"os/user"
 	"path"
 
-	"github.com/erroneousboat/slack-term/context"
-	"github.com/erroneousboat/slack-term/handlers"
+	"github.com/jonathancua/slack-term/context"
+	"github.com/jonathancua/slack-term/handlers"
 	termbox "github.com/nsf/termbox-go"
 
 	"github.com/gizak/termui"

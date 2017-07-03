@@ -71,9 +71,19 @@ func (s *SlackService) GetChannels() []Channel {
 		chans = append(chans, Channel{})
 	}
 	for _, chn := range slackChans {
-		s.SlackChannels = append(s.SlackChannels, chn)
-		chans = append(chans, Channel{chn.ID, chn.Name, chn.Topic.Value})
+        // fmt.Println(chn.Name)
+        if chn.Name == "time" {
+            s.SlackChannels = append(s.SlackChannels, chn)
+            chans = append(chans, Channel{chn.ID, chn.Name, chn.Topic.Value})
+        }
 	}
+
+    // Just return after finding a specific channel
+    s.Channels = chans
+    return chans
+
+    // Uncomment this to see all the channels
+    // os.Exit(1)
 
 	// Groups
 	slackGroups, err := s.Client.GetGroups(true)
@@ -192,7 +202,7 @@ func (s *SlackService) GetMessages(channel interface{}, count int) []string {
 // CreateMessage will create a string formatted message that can be rendered
 // in the Chat pane.
 //
-// [23:59] <erroneousboat> Hello world!
+// [23:59] <jonathancua> Hello world!
 //
 // This returns an array of string because we will try to uncover attachments
 // associated with messages.

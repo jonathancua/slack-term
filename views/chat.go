@@ -3,8 +3,8 @@ package views
 import (
 	"github.com/gizak/termui"
 
-	"github.com/erroneousboat/slack-term/components"
-	"github.com/erroneousboat/slack-term/service"
+	"github.com/jonathancua/slack-term/components"
+	"github.com/jonathancua/slack-term/service"
 )
 
 type View struct {
