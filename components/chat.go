@@ -25,7 +25,7 @@ func CreateChat(svc *service.SlackService, inputHeight int, selectedSlackChannel
 		Offset: 0,
 	}
 
-	chat.List.Height = termui.TermHeight() - inputHeight
+	chat.List.Height = 2
 	chat.List.Overflow = "wrap"
 
 	chat.GetMessages(svc, selectedSlackChannel)

@@ -24,7 +24,7 @@ func CreateChannels(svc *service.SlackService, inputHeight int) *Channels {
 	}
 
 	channels.List.BorderLabel = "Channels"
-	channels.List.Height = termui.TermHeight() - inputHeight
+	channels.List.Height = 2
 
 	channels.SelectedChannel = 0
 	channels.Offset = 0

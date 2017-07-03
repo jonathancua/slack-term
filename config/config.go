@@ -71,7 +71,7 @@ func NewConfig(filepath string) (*Config, error) {
 		return &cfg, errors.New("please specify the 'sidebar_width' between 1 and 11")
 	}
 
-	cfg.MainWidth = 12 - cfg.SidebarWidth
+	cfg.MainWidth = 1
 
 	if cfg.Theme == "light" {
 		termui.ColorMap = map[string]termui.Attribute{
