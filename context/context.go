@@ -29,7 +29,7 @@ type AppContext struct {
 // and referenced througout the application
 func CreateAppContext(flgConfig string) *AppContext {
 	// Load config
-	config, err := config.NewConfig(flgConfig)
+	config, err := config.NewConfig()
 	if err != nil {
 		log.Fatalf("ERROR: not able to load config file (%s): %s", flgConfig, err)
 	}

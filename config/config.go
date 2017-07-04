@@ -1,9 +1,7 @@
 package config
 
 import (
-	"encoding/json"
 	"errors"
-	"os"
 
 	"github.com/gizak/termui"
 )
@@ -20,47 +18,19 @@ type Config struct {
 type keyMapping map[string]string
 
 // NewConfig loads the config file and returns a Config struct
-func NewConfig(filepath string) (*Config, error) {
+func NewConfig() (*Config, error) {
 	cfg := Config{
-		Theme:        "dark",
+		SlackToken:   "",
+		Theme:        "light",
 		SidebarWidth: 1,
 		MainWidth:    11,
 		KeyMap: map[string]keyMapping{
 			"command": {
-				"i":          "mode-insert",
-				"k":          "channel-up",
-				"j":          "channel-down",
-				"g":          "channel-top",
-				"G":          "channel-bottom",
-				"<previous>": "chat-up",
-				"C-b":        "chat-up",
-				"C-u":        "chat-up",
-				"<next>":     "chat-down",
-				"C-f":        "chat-down",
-				"C-d":        "chat-down",
 				"q":          "quit",
-				"<f1>":       "help",
 			},
 			"insert": {
-				"<left>":      "cursor-left",
-				"<right>":     "cursor-right",
-				"<enter>":     "send",
-				"<escape>":    "mode-command",
-				"<backspace>": "backspace",
-				"C-8":         "backspace",
-				"<delete>":    "delete",
-				"<space>":     "space",
 			},
 		},
-	}
-
-	file, err := os.Open(filepath)
-	if err != nil {
-		return &cfg, err
-	}
-
-	if err := json.NewDecoder(file).Decode(&cfg); err != nil {
-		return &cfg, err
 	}
 
 	if cfg.SlackToken == "" {
